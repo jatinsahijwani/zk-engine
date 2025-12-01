@@ -23,8 +23,9 @@ program
   program
   .command('deploy <folder> <privateKey>')
   .description('Deploy verifier.sol in folder to Ethereum using provided private key')
-  .action((folder, privateKey) => {
-    deployVerifier(folder, privateKey);
+  .option('--rpc <rpcUrl>', 'Custom RPC endpoint (for Orbit or local chains)')
+  .action((folder, privateKey, options) => {
+    deployVerifier(folder, privateKey, options);
   });
 
 
